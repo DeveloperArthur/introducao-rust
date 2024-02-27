@@ -1,0 +1,11 @@
+Esse projeto tem alguns conceitos da linguagem rust, como:
+- modularização
+- tratamento de erros
+- Result<T, E>
+- struct
+- slice
+- ownership
+- for
+- lifetimes
+- testes unitarios
+- iterator adaptor
