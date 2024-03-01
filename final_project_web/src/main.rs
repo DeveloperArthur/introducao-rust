@@ -6,6 +6,12 @@ use std::net::TcpStream;
 use std::thread;
 use std::time::Duration;
 
+/* nesse projeto criamos um sistema web com servidor single thread, e depois
+alteramos ele para multithread, o programador pode especificar o pool de threads
+
+(poderíamos ter aberto uma thread para cada request, mas isso abre brecha para
+ataque DDoS) */
+
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
     let pool = ThreadPool::new(4);
