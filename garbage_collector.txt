@@ -2,10 +2,12 @@ Rust não tem garbage collector.
 
 O papel de um garbage collector é rastrear e limpar memória que não está mais sendo usada, em linguagens que não tem GC, é responsabilidade do programador identificar quando a memória não está mais sendo usada e chamar, explicitamente, um código que a libere, assim como fez para alocar.
 
-O conceito de Ownership (https://github.com/DeveloperArthur/introducao-rust/blob/main/ownership/ownership.rs) do Rust é que o permite ter garantias de segurança de memória sem precisar de um garbage collector.
+Fazer isso corretamente tem sido, historicamente, um problema difícil de programação. Se esquecer, desperdiça memória. Se fizer cedo demais, terá uma variável inválida. Se fizer duas vezes, terá um bug de double free. Precisa casar exatamente um allocate com um free.
 
-Os principais problemas de ter um coletor de lixo são o overhead de desempenho, pausas de execução imprevisíveis, gerenciamento imprevisível de memória, limitações em sistemas de baixo nível e dificuldade de prever o uso de memória.
+O conceito de Ownership do Rust é que o permite ter garantias de segurança de memória sem precisar de um garbage collector.
+
+Os principais problemas de ter um garbage collector são o overhead de desempenho, pausas de execução imprevisíveis, gerenciamento imprevisível de memória, limitações em sistemas de baixo nível e dificuldade de prever o uso de memória.
 
 O Go utiliza um garbage collector, mas para contornar esses problemas ele utiliza um garbage collector concorrente e paralelo, que é projetado para minimizar as pausas de execução e reduzir o impacto no desempenho.
 
-Isso significa que o coletor de lixo pode ser executado em paralelo com a execução do programa principal, o que ajuda a reduzir as pausas de execução.
+Isso significa que o garbage collector pode ser executado em paralelo com a execução do programa principal, o que ajuda a reduzir as pausas de execução.
