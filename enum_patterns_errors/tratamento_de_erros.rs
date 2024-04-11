@@ -77,7 +77,11 @@ fn result2(){
     código de onde vem essa mensagem de erro. Se usamos unwrap em
     diversos lugares, pode tomar mais tempo encontrar exatamente qual
     dos unwrap está causando o pânico, dado que todas as chamadas a
-    unwrap chamam o print de pânico com a mesma mensagem.*/
+    unwrap chamam o print de pânico com a mesma mensagem.
+    
+    Por isso não use unwrap ou expect em produção, pois isso resulta em 
+    pânico e trava seu aplicativo. Sempre lide com casos de erro com match
+    ou, caso contrário, certifique-se de detectar erros e retorná-los normalmente */
 }
 
 //--------------------------------------------------------------------------------------------

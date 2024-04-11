@@ -135,6 +135,15 @@ fn primeira_palavra_aprimorada(s: &str) -> &str {
 
     &s[..]
 }
+
+/* Ao lidar com &str, lidamos com o ponteiro para o espaço na 
+memória e podemos lê-lo, mas não podemos modificá-lo. Isso torna 
+o uso de &str mais eficiente em termos de memória. Aqui está uma 
+regra prática: se você criar funções, use &str como tipo de parâmetro 
+quando quiser apenas ler uma string. Se você deseja possuí-lo e 
+modificá-lo, use String. 
+
+Podemos usar to_string para converter &str em String */
 //------------------------------------------------------------------------------------------
 //Outras Slices
 
